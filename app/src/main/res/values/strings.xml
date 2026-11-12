@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Frost</string>
+    <string name="power_service">Frost power menu</string>
+    <string name="power_desc">Lets the Frost launcher open the system power menu (shut down / restart). It does not read anything on your screen.</string>
+</resources>

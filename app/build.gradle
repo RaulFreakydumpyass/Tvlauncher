@@ -1,0 +1,37 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.frost.launcher'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.frost.launcher'
+        minSdk 23            // Android 6.0
+        targetSdk 34
+        versionCode 3
+        versionName '1.2'
+        // Pure Java, no native code: one APK runs on arm32 (armeabi-v7a), arm64 (arm64-v8a) and x86.
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Signed with the debug key so the APK installs directly (sideloading).
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
